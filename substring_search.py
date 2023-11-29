@@ -1,8 +1,8 @@
-"""Learning String Operations using OOP's"""
+""" Here we are trying to search substring inside the given string"""
 
-class String_search:
+class Substring_search:
     
-    def searching_substring(self,strg,sub_str):
+    def logic1(self,strg,sub_str):
         self.result = []
         if sub_str in strg:
             i = strg.find(sub_str)
@@ -12,10 +12,18 @@ class String_search:
             return self.result
         else:
             print('Given word in not there in String')
+        
+    def logic2(self,strg,sub_strg):
+        self.result= []
+        # self.result = [i for i in range(len(strg)) if strg.startswith(sub_str,i)]
+        for i in range(len(strg)):
+            if strg.startswith(sub_str,i):
+                self.result.append(i)
+        return self.result
            
 if __name__ == '__main__':
     strg = "I liked the movie, acting in movie was Great!"
     sub_str = "movie"
-    a = String_search()
-    print(a.searching_substring(strg,sub_str))
-    
+    a = Substring_search()
+    print(a.logic1(strg,sub_str))
+    print(a.logic2(strg,sub_str))

@@ -15,7 +15,6 @@ class Substring_search:
         
     def logic2(self,strg,sub_strg):
         self.result= []
-        # self.result = [i for i in range(len(strg)) if strg.startswith(sub_str,i)]
         for i in range(len(strg)):
             if strg.startswith(sub_str,i):
                 self.result.append(i)
